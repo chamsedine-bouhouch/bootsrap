@@ -1,0 +1,8 @@
+
+id,customerName,amount,currency
+1,John,150.50,EUR
+2,Jane,200.00,USD
+3,Ahmed,-50.00,TND
+4,Sarah,350.00,EUR
+5,David,0.00,USD
+6,Amine,125.75,TND
