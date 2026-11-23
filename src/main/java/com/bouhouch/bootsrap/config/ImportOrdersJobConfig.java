@@ -1,6 +1,7 @@
 package com.bouhouch.bootsrap.config;
 
 import com.bouhouch.bootsrap.processor.OrderProcessor;
+import com.bouhouch.bootsrap.writer.OrderDatabaseWriter;
 
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
@@ -35,7 +36,7 @@ public class ImportOrdersJobConfig {
             PlatformTransactionManager transactionManager,
             FlatFileItemReader<OrderInput> orderReader,
             OrderProcessor orderProcessor,
-            ItemWriter<OrderInput> orderWriter) {
+             OrderDatabaseWriter orderWriter) {
         return new ChunkOrientedStepBuilder<OrderInput, OrderInput>(
                 "importOrdersStep", jobRepository, CHUNK_SIZE)
                 .reader(orderReader)
