@@ -9,6 +9,9 @@ public class OrderInput {
     OrderStatus status;
     LocalDate order_date;
 
+    // Used to explain why a record was rejected
+    private String rejectionReason;
+
     public long getOrder_id() {
         return order_id;
     }
@@ -49,14 +52,23 @@ public class OrderInput {
         this.order_date = order_date;
     }
 
-    @Override 
+    public String getRejectionReason() {
+        return rejectionReason;
+    }
+
+    public void setRejectionReason(String rejectionReason) {
+        this.rejectionReason = rejectionReason;
+    }
+
+    @Override
     public String toString() {
-        return "OrderRecord{" +
+        return "OrderInput{" +
                 "order_id=" + order_id +
-                ", customer_id=" + customer_id +
+                ", customer_id='" + customer_id + '\'' +
                 ", amount=" + amount +
-                ", status='" + status + '\'' +
+                ", status=" + status +
                 ", order_date=" + order_date +
+                ", rejectionReason='" + rejectionReason + '\'' +
                 '}';
     }
 }
